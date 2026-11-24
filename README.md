@@ -12,4 +12,14 @@ checker.go : programme vérifiant si une suite d'opérations trie correctement l
 ## ⚙️ Prérequis
 Avoir le langage "GO" installé 
 
+## 🚀 Utilisation et Verification
+Pour lancer le programme, ouvrir le terminal et taper cette commande :
+
+```bash
+./push-swap "4 67 3 87 23"
+
+Vérifier le résultat avec checker :
+
+ARG="4 67 3 87 23"
+./push-swap "$ARG" | ./checker "$ARG"
 
