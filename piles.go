@@ -198,3 +198,29 @@ func (p *Piles) trier() {
 		p.pa()
 	}
 }
+func lireArgs(args []string) ([]int, bool) {
+	if len(args) == 0 {
+		return nil, true
+	}
+	var res []int
+
+	for _, arg := range args {
+		morceaux := strings.Fields(arg)
+		if len(morceaux) == 0 {
+			return nil, false
+		}
+		for _, m := range morceaux {
+			n, err := strconv.Atoi(m)
+			if err != nil {
+				return nil, false
+			}
+			for _, existant := range res {
+				if existant == n {
+					return nil, false
+				}
+			}
+			res = append(res, n)
+		}
+	}
+	return res, true
+}
